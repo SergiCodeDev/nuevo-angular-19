@@ -1,0 +1,73 @@
+<h3>dataReady</h3>
+@defer (when dataReady) {
+<p>Los datos han sido cargados</p>
+} @placeholder {
+<p>Mientars los datos no están</p>
+}
+<h3>idle</h3>
+@defer (on idle) {
+<p>Cuando el navegador esté listo/disponible, esto se cargará.</p>
+} @placeholder {
+<p>Mientras los datos no están</p>
+}
+
+<h3>viewport</h3>
+@defer (on viewport) {
+<p>large component loaded after it appeared inside the viewport</p>
+} @placeholder {
+<p>Mientras los datos no están (con el tamaño del elemento a remplazar)</p>
+}
+
+<h3>triggerElement</h3>
+<div #triggerElement>Hola</div>
+@defer (on viewport(triggerElement)) {
+<p>triggerElement ha aparecido en la vista</p>
+}
+
+<h3>interaction</h3>
+@defer (on interaction) {
+<p>Me cargué porque interactuaron conmigo</p>
+} @placeholder {
+<p>Mientras los datos no están</p>
+}
+
+<h3>interactionElement</h3>
+<div #interactionElement>Hola</div>
+@defer (on interaction(interactionElement)){
+<p>Me cargué porque interactuado con interactionElement</p>
+}
+
+<h3>hover</h3>
+@defer (on hover) {
+<p>Me cargué porque hicieron hover</p>
+} @placeholder {
+<p>Hazme hover</p>
+}
+
+<h3>specific hover</h3>
+<div #specificElement>Hola</div>
+@defer (on hover(specificElement)) {
+<p>Me cargué porque le hicieron hover</p>
+} @placeholder {
+<p>Hazle hover</p>
+}
+
+<h3>timer</h3>
+@defer (on timer(500ms)) {
+<p>Paso el tiempo</p>
+} @placeholder {
+<p>espera medio segundo</p>
+}
+
+<h3>prefetch</h3>
+@defer (on interaction; prefetch on idle) {
+<p>Me cargué porque interactuaron conmigo o el navegador está idle</p>
+} @placeholder {
+<p>Interactua conmigo</p>
+}
+<h4>...</h4>
+@defer (on viewport; prefetch on idle) {
+<p>large component loaded after it appeared inside the viewport</p>
+} @placeholder {
+<p>Mientras los datos no están (con el tamaño del elemento a remplazar)</p>
+}

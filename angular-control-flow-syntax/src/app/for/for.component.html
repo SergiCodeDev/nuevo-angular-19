@@ -1,0 +1,13 @@
+<!-- antes -->
+<ul>
+  <li *ngFor="let name of names">{{ name }}</li>
+</ul>
+<!-- ahora -->
+<!-- usar en el track un id unico a ser posible -->
+<ul>
+  @for (name of names; track name) {
+  <li>{{ name }}</li>
+  } @empty {
+  <li>No hay nombres</li>
+  }
+</ul>

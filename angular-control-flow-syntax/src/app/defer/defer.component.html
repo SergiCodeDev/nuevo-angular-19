@@ -1,0 +1,9 @@
+@defer (when isImageVisible) {
+<img
+  src="https://sergicodedev.pages.dev/portada.avif"
+  alt="Differed Image"
+  width="500"
+/>
+} @if (!isImageVisible) {
+<button (click)="showImage()">Ver Imagen</button>
+}

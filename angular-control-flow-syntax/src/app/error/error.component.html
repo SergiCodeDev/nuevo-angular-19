@@ -1,0 +1,9 @@
+@defer (when isContentReady) {
+<p>Componente</p>
+} @loading (after 100ms; minimum 1s) {
+<p>cargando</p>
+} @placeholder {
+<p>placeholder</p>
+} @error {
+<p>Error al cargar el componente</p>
+}

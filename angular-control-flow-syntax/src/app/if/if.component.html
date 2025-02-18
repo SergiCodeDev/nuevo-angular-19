@@ -1,0 +1,11 @@
+<!-- antes -->
+<p *ngIf="isVisible" ; else elseBlock>if works!</p>
+<ng-template #elseBlock> Contenido oculto </ng-template>
+<!-- ng-container se borra la etiqueta html -->
+<ng-container *ngIf=""> Contenido Visible </ng-container>
+<!-- ahora -->
+@if (isVisible) {
+<p>Se muestra</p>
+} @else {
+<p>Otra cosa</p>
+}

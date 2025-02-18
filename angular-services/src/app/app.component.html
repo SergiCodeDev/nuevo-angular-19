@@ -1,0 +1,10 @@
+<!-- @let characters = characters$ | async -->
+@let charactersLocal = characters();
+
+@for (character of charactersLocal; track character.id) {
+    {{ character.id }}
+    {{ character.name }}
+    {{ character.lastName }}
+    {{ character.age }}
+}
+<router-outlet />
